@@ -34,7 +34,9 @@ var requirejs, require, define;
     function normalize(name, baseName) {
         var nameParts, nameSegment, mapValue, foundMap, lastIndex,
             foundI, foundStarMap, starI, i, j, part,
-            baseParts = baseName && baseName.split("/"),
+            
+            // fix browserify build module `require(name, true)` throw error
+            baseParts = baseName.split && baseName.split("/"),
             map = config.map,
             starMap = (map && map['*']) || {};
 
