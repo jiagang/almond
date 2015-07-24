@@ -36,7 +36,7 @@ var requirejs, require, define;
             foundI, foundStarMap, starI, i, j, part,
             
             // fix browserify build module `require(name, true)` throw error
-            baseParts = baseName.split && baseName.split("/"),
+            baseParts = baseName && baseName.split && baseName.split("/"),
             map = config.map,
             starMap = (map && map['*']) || {};
 
